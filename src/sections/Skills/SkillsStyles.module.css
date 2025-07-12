@@ -1,54 +1,56 @@
 .container {
+  padding: 64px 16px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
+}
 
-  span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
+.columns {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+  max-width: 1000px;
+}
 
-  img {
-    width: 20px;
+@media (min-width: 768px) {
+  .columns {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
   }
+}
+
+.column {
+  flex: 1;
 }
 
 .subheading {
-   font-size: 24px;
-  font-weight: 500;
-  margin-bottom:18px;
-  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 24px;
 }
 
 .skillList {
-  display: flex;
-  justify-content: space-evenly;
-  align-self: center;
-  flex-wrap: wrap;
-  row-gap: 40px;
-  max-width: 26ch;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-hr {
-  width: 100px;
-  height: 1px;
-  border: none;
-  background-color: var(--text-color);
-  margin: 30px auto;
+.skillList li {
+  font-size: 18px;
+  padding: 10px 16px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  background-color: #f2f2f2;
+  transition: all 0.3s ease;
+  cursor: default;
 }
 
-@media (width >= 800px) {
-  .skillList {
-    max-width: fit-content;
-    gap: 30px;
 
-    p {
-      font-size: 20px;
-    }
-  }
-
-  hr {
-    width: 300px;
-  }
+.skillList li:hover {
+  background-color: #d1c4e9;
+  color: #4a148c;
+  transform: scale(1.05);
 }

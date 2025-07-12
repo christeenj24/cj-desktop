@@ -1,6 +1,6 @@
 import styles from './FooterStyles.module.css';
-import twitterLight from '../../assets/twitter-light.svg';
-import twitterDark from '../../assets/twitter-dark.svg';
+import instagramLight from '../../assets/instagram-light.svg';
+import instagramDark from '../../assets/instagram-dark.svg';
 import githubLight from '../../assets/github-light.svg';
 import githubDark from '../../assets/github-dark.svg';
 import linkedinLight from '../../assets/linkedin-light.svg';
@@ -11,14 +11,14 @@ function Footer() {
   const { theme } = useTheme();
   
     
-    const twitterIcon = theme === 'light' ? twitterLight : twitterDark;
+    const InstagramIcon = theme === 'light' ? instagramLight : instagramDark;
     const githubIcon = theme === 'light' ? githubLight : githubDark;
     const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
   return (
     <section id="footer" className={styles.container}>
       <span>
-          <a href="https://twitter.com/" target="_blank">
-            <img src={twitterIcon} alt="Twitter icon" />
+          <a href="https://www.instagram.com/sejiii24/" target="_blank">
+            <img src={InstagramIcon} alt="Instagram icon" />
           </a>
           <a href="https://github.com/" target="_blank">
             <img src={githubIcon} alt="Github icon" />
@@ -28,8 +28,8 @@ function Footer() {
           </a>
         </span>
       <p>
-        &copy; 2024 Christeen Joyce Masongsong. <br />
-        All rights reserved.
+        &copy; 2025 Christeen Joyce Masongsong <br />
+        
       </p>
     </section>
   );

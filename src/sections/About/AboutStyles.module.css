@@ -1,0 +1,111 @@
+.aboutSection {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.headingContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.profileImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.profileImage:hover {
+  transform: scale(1.05);
+}
+
+.subheading {
+  font-size: 20px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.cvButtonContainer {
+  margin-top: 24px;
+}
+
+.cvButton {
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cvButton:hover {
+ background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  border: none;
+  border-radius: 20px;
+  width: 126px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.headingContainer h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.aboutSection p {
+  font-size: 16px; 
+  margin: 4px 0;    
+}
+
+.graduation {
+  font-family: 'Rubick', monospace;
+  font-size: 14px;
+  opacity: 0.6;
+  margin-top: 4px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.interestsList {
+  font-family: 'Rubick', monospace;
+}
+
+.interestsList li {
+  transition: all 0.3s ease;
+  transform-origin: left;
+}
+
+.interestsList li:hover {
+  
+  transform: translateX(5px) scale(1.05);
+}
+
+.dev:hover {
+  color: rgb(255, 99, 132);
+}
+
+.web:hover {
+  color: rgb(54, 162, 235);
+}
+
+.gaming:hover {
+  color: rgb(255, 206, 86);
+}
+
+.cooking:hover {
+  color: rgb(75, 192, 192);
+}

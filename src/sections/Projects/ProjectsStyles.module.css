@@ -1,7 +1,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: Center;
+  
 
   img {
     max-width: 250px;
@@ -19,6 +20,15 @@
   a:hover {
     transform: scale(1.05);
   }
+}
+
+.sectionTitle {
+  font-size: 48px;         /* Title size */
+  text-align: center;      /* Centered horizontally */
+  margin-top: 24px;        /* Top spacing */
+  margin-bottom: 32px;     /* Bottom spacing */
+  color: #111111;          /* Adjust if you want dark/light themes */
+  font-weight: bold;       /* Optional: make it bold */
 }
 
 .projectsContainer {

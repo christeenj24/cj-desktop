@@ -1,46 +1,31 @@
 import styles from './ContactStyles.module.css';
+import { useState } from 'react';
 
 function Contact() {
+  const [copied, setCopied] = useState(false);
+  const email = "masongsong.cj@gmail.com";
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); 
+    });
+  };
+
   return (
     <section id="contact" className={styles.container}>
-      <h1 className="sectionTitle">Contact</h1>
-      <form action="">
-        <div className="formGroup">
-          <label htmlFor="name" hidden>
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Name"
-            required
-          />
-        </div>
-        <div className="formGroup">
-          <label htmlFor="email" hidden>
-            Email
-          </label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="Email"
-            required
-          />
-        </div>
-        <div className="formGroup">
-          <label htmlFor="message" hidden>
-            Message
-          </label>
-          <textarea
-            name="message"
-            id="message"
-            placeholder="Message"
-            required></textarea>
-        </div>
-        <input className="hover btn" type="submit" value="Submit" />
-      </form>
+
+      <p className={styles.note}>
+        Note: I'm currently working on this website, but you can email me at:&nbsp;
+        <span onClick={handleCopy} className={styles.copyEmail}>
+          {email}
+        </span>
+        {copied && <span className={styles.copiedMsg}> — copied!</span>}
+      </p>
+      <p>or</p>
+      <a href={`mailto:${email}`} className={styles.emailButton}>
+        Send me an email!
+      </a>
     </section>
   );
 }
