@@ -67,7 +67,7 @@ function Hero() {
         </div>
       </div>
 
-      {/* Modals */}
+      
       <WindowModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} title="About">
         <About />
       </WindowModal>
