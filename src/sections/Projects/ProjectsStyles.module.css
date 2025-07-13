@@ -1,34 +1,33 @@
 .container {
   display: flex;
   flex-direction: column;
-  text-align: Center;
-  
+  text-align: center;
+}
 
-  img {
-    max-width: 250px;
-    align-self: center;
-    border-radius: 20px;
-  }
+.container img {
+  max-width: 250px;
+  align-self: center;
+  border-radius: 20px;
+}
 
-  a {
-    width: fit-content;
-    text-decoration: none;
-    color: #222;
-    transition: transform 200ms ease-in-out;
-  }
+.container a {
+  width: fit-content;
+  text-decoration: none;
+  color: #222;
+  transition: transform 200ms ease-in-out;
+}
 
-  a:hover {
-    transform: scale(1.05);
-  }
+.container a:hover {
+  transform: scale(1.05);
 }
 
 .sectionTitle {
-  font-size: 48px;         /* Title size */
-  text-align: center;      /* Centered horizontally */
-  margin-top: 24px;        /* Top spacing */
-  margin-bottom: 32px;     /* Bottom spacing */
-  color: #111111;          /* Adjust if you want dark/light themes */
-  font-weight: bold;       /* Optional: make it bold */
+  font-size: 48px;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 32px;
+  color: #111;
+  font-weight: bold;
 }
 
 .projectsContainer {
@@ -38,7 +37,7 @@
   gap: 30px;
 }
 
-@media (width >= 800px) {
+@media (min-width: 800px) {
   .projectsContainer {
     flex-direction: row;
     flex-wrap: wrap;

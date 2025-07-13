@@ -11,7 +11,7 @@ import Contact from './sections/Contact/Contact.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider>
-    <BrowserRouter>
+    <BrowserRouter basename="/cj-desktop/">
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/projects" element={<Projects />} />

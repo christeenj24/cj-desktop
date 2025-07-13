@@ -9,28 +9,25 @@ import { useTheme } from '../../common/ThemeContext';
 
 function Footer() {
   const { theme } = useTheme();
-  
-    
-    const InstagramIcon = theme === 'light' ? instagramLight : instagramDark;
-    const githubIcon = theme === 'light' ? githubLight : githubDark;
-    const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
+
+  const instagramIcon = theme === 'light' ? instagramLight : instagramDark;
+  const githubIcon = theme === 'light' ? githubLight : githubDark;
+  const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
+
   return (
     <section id="footer" className={styles.container}>
       <span>
-          <a href="https://www.instagram.com/sejiii24/" target="_blank">
-            <img src={InstagramIcon} alt="Instagram icon" />
-          </a>
-          <a href="https://github.com/" target="_blank">
-            <img src={githubIcon} alt="Github icon" />
-          </a>
-          <a href="https://www.linkedin.com/in/cjmasongsong/" target="_blank">
-            <img src={linkedinIcon} alt="Linkedin icon" />
-          </a>
-        </span>
-      <p>
-        &copy; 2025 Christeen Joyce Masongsong <br />
-        
-      </p>
+        <a href="https://www.instagram.com/sejiii24/" target="_blank" rel="noopener noreferrer">
+          <img src={instagramIcon} alt="Instagram icon" />
+        </a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+          <img src={githubIcon} alt="Github icon" />
+        </a>
+        <a href="https://www.linkedin.com/in/cjmasongsong/" target="_blank" rel="noopener noreferrer">
+          <img src={linkedinIcon} alt="LinkedIn icon" />
+        </a>
+      </span>
+      <p>&copy; 2025 Christeen Joyce Masongsong</p>
     </section>
   );
 }

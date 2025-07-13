@@ -14,7 +14,6 @@ function Contact() {
 
   return (
     <section id="contact" className={styles.container}>
-
       <p className={styles.note}>
         Note: I'm currently working on this website, but you can email me at:&nbsp;
         <span onClick={handleCopy} className={styles.copyEmail}>
@@ -22,7 +21,9 @@ function Contact() {
         </span>
         {copied && <span className={styles.copiedMsg}> — copied!</span>}
       </p>
+
       <p>or</p>
+
       <a href={`mailto:${email}`} className={styles.emailButton}>
         Send me an email!
       </a>

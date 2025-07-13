@@ -33,18 +33,7 @@ function Projects() {
           h3="Sticker Commission"
           p="Sticker"
         />
-        
-        {/* <h3>Other Dev Project:</h3>
-        <ul>
-          <li>This Website</li>
-          <li>That's it for now, still working on the other! :) </li>
-        </ul> */}
-
-        {/* <p>Accepting work offers via my work email!</p> */}
-    
       </div>
-
-      
     </section>
   );
 }

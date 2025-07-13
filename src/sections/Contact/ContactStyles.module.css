@@ -1,29 +1,46 @@
+:root {
+  --btn-color: #e4e2dd;
+  --btn-text-color: #292929;
+  --text-color: #292929;
+  --form-text-color: #292929;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --btn-color: #292929;
+    --btn-text-color: #e4e2dd;
+  }
+}
+
+body {
+  font-family: 'Rubick', sans-serif;
+  color: var(--text-color);
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  text-align: center;
   align-items: center;
+  text-align: center;
   padding: 32px;
   gap: 20px;
+  color: var(--text-color);
 }
-
 
 .emailButton {
   all: unset;
-  font: inherit; 
+  font: inherit;
   background-color: var(--btn-color);
   color: var(--btn-text-color);
-  border: none;
-  border-radius: 20px;
   width: 200px;
   height: 50px;
   font-size: 20px;
   font-weight: bold;
+  border-radius: 20px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
   line-height: 50px;
   cursor: pointer;
-  text-decoration: none;
   transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
 }
 
@@ -36,14 +53,12 @@
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 
-
 .note {
   font-size: 14px;
   max-width: 600px;
   line-height: 1.6;
-  color: var(--form-text-color); 
+  color: var(--form-text-color);
 }
-
 
 .copyEmail {
   text-decoration: underline;
@@ -51,12 +66,12 @@
   transition: color 0.2s ease;
 }
 
+.copyEmail:hover {
+  color: var(--btn-text-color);
+}
+
 .copiedMsg {
   color: green;
   margin-left: 8px;
   font-weight: 500;
-}
-
-body {
-  font-family: 'Rubick', sans-serif;
 }

@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import styles from './HeroStyles.module.css';
 import heroImg from '../../assets/CJM.png';
 import sun from '../../assets/sun.svg';
 import moon from '../../assets/moon.svg';
-import { useTheme } from '../../common/ThemeContext';
 import clickSound from '../../assets/click.mp3';
-import { useState } from 'react';
+
+import { useTheme } from '../../common/ThemeContext';
 
 import WindowModal from '../../WindowModal';
 import About from '../../sections/About/About';
@@ -18,6 +19,7 @@ function Hero() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const [isSkillsOpen, setIsSkillsOpen] = useState(false);
+
   const themeIcon = theme === 'light' ? sun : moon;
 
   const playClickSound = () => {
@@ -36,7 +38,7 @@ function Hero() {
         <img
           className={styles.colorMode}
           src={themeIcon}
-          alt="Color mode icon"
+          alt="Color mode toggle"
           onClick={() => {
             toggleTheme();
             playClickSound();
@@ -52,32 +54,35 @@ function Hero() {
         </h1>
         <h2>Web Designer/Developer</h2>
         <p className={styles.description}>
-          I specialize in application development in Salesforce, HTML, and Javascript programming. I also do graphic design and basic video editing.
+          I specialize in Salesforce support and front-end development using HTML, CSS, and JavaScript. 
+          I also enjoy the creative side—designing graphics and visual content for work and promotions. 
+          Always up for building useful things with both code and creativity!
         </p>
 
         <div className={styles.buttonGroup}>
-          <button className="hover" onClick={() => { playClickSound(); setIsAboutOpen(true); }}>About</button>
-          <button className="hover" onClick={() => { playClickSound(); setIsProjectsOpen(true); }}>Projects</button>
-          <button className="hover" onClick={() => { playClickSound(); setIsSkillsOpen(true); }}>Skills</button>
-          <button className="hover" onClick={() => { playClickSound(); setIsContactOpen(true); }}>Contact</button>
+          <button onClick={() => { playClickSound(); setIsAboutOpen(true); }}>About</button>
+          <button onClick={() => { playClickSound(); setIsProjectsOpen(true); }}>Projects</button>
+          <button onClick={() => { playClickSound(); setIsSkillsOpen(true); }}>Skills</button>
+          <button onClick={() => { playClickSound(); setIsContactOpen(true); }}>Contact</button>
         </div>
       </div>
 
+      {/* Modals */}
       <WindowModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} title="About">
-  <About />
-</WindowModal>
+        <About />
+      </WindowModal>
 
-<WindowModal isOpen={isProjectsOpen} onClose={() => setIsProjectsOpen(false)} title="Projects">
-  <Projects />
-</WindowModal>
+      <WindowModal isOpen={isProjectsOpen} onClose={() => setIsProjectsOpen(false)} title="Projects">
+        <Projects />
+      </WindowModal>
 
-<WindowModal isOpen={isSkillsOpen} onClose={() => setIsSkillsOpen(false)} title="Skills">
-  <Skills />
-</WindowModal>
+      <WindowModal isOpen={isSkillsOpen} onClose={() => setIsSkillsOpen(false)} title="Skills">
+        <Skills />
+      </WindowModal>
 
-<WindowModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} title="Contact">
-  <Contact />
-</WindowModal>
+      <WindowModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} title="Contact">
+        <Contact />
+      </WindowModal>
     </section>
   );
 }
