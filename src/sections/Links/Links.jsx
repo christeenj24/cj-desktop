@@ -6,14 +6,14 @@ function Links() {
       <div className={styles.columns}>
 
         <div className={styles.column}>
-          <h2>Development</h2>
+          <h2>wooooooorking on it</h2>
           <ul>
 
           </ul>
         </div>
 
         <div className={styles.column}>
-          <h2>Tools</h2>
+          <h2>hehe</h2>
           <ul>
             
           </ul>

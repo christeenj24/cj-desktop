@@ -1,14 +1,29 @@
+/* === Container Layout === */
 .container {
   flex: 1;
-  display: flex;
-  height: 700px;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 20px;
+  padding: 60px 40px;
+  margin: 150px auto 50px;
+  max-width: 960px;
+  height: auto;
   text-align: center;
   overflow-x: hidden;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.3s ease;
 }
 
+/* === Section Header === */
+.containerHeader {
+  margin-top: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* === Hero Image === */
 .hero {
   position: absolute;
   top: 30px;
@@ -19,33 +34,43 @@
   z-index: 10;
 }
 
+/* === Theme Toggle === */
 .colorMode {
   position: absolute;
   top: 30px;
   right: 30px;
   width: 25px;
-  transition: transform 0.2s ease;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .colorMode:hover {
   transform: scale(1.2);
 }
 
+/* === Info Section === */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
 .description {
-  max-width: 720px;        
+  max-width: 720px;
   text-align: center;
 }
 
+/* === Button Group === */
 .buttonGroup {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
-  flex-wrap: wrap;
   margin-top: 16px;
 }
 
+/* === Icon Buttons === */
 .iconButton {
   background: none;
   border: none;
@@ -64,13 +89,12 @@
   object-fit: contain;
 }
 
+/* === Other Buttons (non-icon) === */
 button:not(.iconButton) {
   background-color: var(--btn-color);
   color: var(--btn-text-color);
   border: none;
   border-radius: 20px;
-  width: 126px;
-  height: 50px;
   font-size: 20px;
   font-weight: bold;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -86,17 +110,10 @@ button:not(.iconButton):active {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-}
-
+/* === Responsive Adjustments === */
 @media (min-width: 800px) {
   .container {
     flex-direction: row-reverse;
-    align-items: center;
     justify-content: space-evenly;
   }
 

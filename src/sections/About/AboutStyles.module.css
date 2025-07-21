@@ -73,7 +73,6 @@
 
 .interestsList li {
   transition: all 0.3s ease;
-  transform-origin: left;
 }
 
 .interestsList li:hover {

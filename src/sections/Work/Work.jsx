@@ -27,6 +27,7 @@ function Work() {
               <li className={styles.skillItem}>Illustrator</li>
               <li className={styles.skillItem}>Procreate</li>
               <li className={styles.skillItem}>Figma</li>
+              <li className={styles.skillItem}>Blender</li>
               <li className={styles.skillItem}>Canva</li>
               <li className={styles.skillItem}>Capcut</li>
             </ul>
@@ -37,11 +38,12 @@ function Work() {
       </section>
 
       <section id="work" className={styles.container}>
+        <h2 className={styles.subheading}>Design Projects</h2>
         <div className={styles.projectsContainer}>
           <ProjectCard
             src={Brochure}
             link="https://www.behance.net/gallery/188785777/CAVITE-CITY-TRAVEL-GUIDE"
-            h3="Brochure"
+            h3="Cavite City Guide"
             p="Travel Guide Brochure"
           />
           <ProjectCard
@@ -59,12 +61,23 @@ function Work() {
           <ProjectCard
             src={Sticker}
             link="https://www.behance.net/gallery/188782977/Procreate-Arts"
-            h3="Sticker Commission"
-            p="Sticker"
+            h3="Emoji Sticker"
+            p="Sticker Commission"
           />
         </div>
+        <hr className={styles.divider} />
+      </section>
+
+      <section id="work" className={styles.container}>
+        <h2 className={styles.subheading}>Web Projects</h2>
+        <div className={styles.projectsContainer}>
+         <p></p>
+        </div>
+        <hr className={styles.divider} />
       </section>
     </>
+
+    
   );
 }
 
