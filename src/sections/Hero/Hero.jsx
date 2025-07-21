@@ -6,12 +6,20 @@ import moon from '../../assets/moon.svg';
 import clickSound from '../../assets/click.mp3';
 
 import { useTheme } from '../../common/ThemeContext';
+import infoLight from '../../assets/info-light.png';
+import infoDark from '../../assets/info-dark.png';
+import workLight from '../../assets/work-light.png';
+import workDark from '../../assets/work-dark.png';
+import linksLight from '../../assets/links-light.png';
+import linksDark from '../../assets/links-dark.png';
+import contactLight from '../../assets/contact-light.png';
+import contactDark from '../../assets/contact-dark.png';
 
 import WindowModal from '../../WindowModal';
 import About from '../../sections/About/About';
 import Contact from '../../sections/Contact/Contact';
-import Projects from '../../sections/Projects/Projects';
-import Skills from '../../sections/Skills/Skills';
+import Projects from '../../sections/Work/Work';
+import Skills from '../../sections/Links/Links';
 
 function Hero() {
   const { theme, toggleTheme } = useTheme();
@@ -33,12 +41,12 @@ function Hero() {
         <img
           src={heroImg}
           className={styles.hero}
-          alt="Profile picture of Cj Masongsong"
+          alt="Profile picture of CJ Masongsong"
         />
         <img
           className={styles.colorMode}
           src={themeIcon}
-          alt="Color mode toggle"
+          alt="Toggle theme"
           onClick={() => {
             toggleTheme();
             playClickSound();
@@ -54,35 +62,86 @@ function Hero() {
         </h1>
         <h2>Web Designer/Developer</h2>
         <p className={styles.description}>
-          I specialize in Salesforce support and front-end development using HTML, CSS, and JavaScript. 
-          I also enjoy the creative side—designing graphics and visual content for work and promotions. 
+          I specialize in Salesforce support and front-end development using HTML, CSS, and JavaScript.
+          I also enjoy the creative side—designing graphics and visual content for work and promotions.
           Always up for building useful things with both code and creativity!
         </p>
 
         <div className={styles.buttonGroup}>
-          <button onClick={() => { playClickSound(); setIsAboutOpen(true); }}>About</button>
-          <button onClick={() => { playClickSound(); setIsProjectsOpen(true); }}>Projects</button>
-          <button onClick={() => { playClickSound(); setIsSkillsOpen(true); }}>Skills</button>
-          <button onClick={() => { playClickSound(); setIsContactOpen(true); }}>Contact</button>
+          <button
+            onClick={() => {
+              playClickSound();
+              setIsAboutOpen(true);
+            }}
+            className={styles.iconButton}
+          >
+            <img
+              src={theme === 'light' ? infoLight : infoDark}
+              alt="About Icon"
+              className={styles.buttonImage}
+            />
+          </button>
+
+          <button
+            onClick={() => {
+              playClickSound();
+              setIsProjectsOpen(true);
+            }}
+            className={styles.iconButton}
+          >
+            <img
+              src={theme === 'light' ? workLight : workDark}
+              alt="Projects Icon"
+              className={styles.buttonImage}
+            />
+          </button>
+
+          <button
+            onClick={() => {
+              playClickSound();
+              setIsSkillsOpen(true);
+            }}
+            className={styles.iconButton}
+          >
+            <img
+              src={theme === 'light' ? linksLight : linksDark}
+              alt="Skills Icon"
+              className={styles.buttonImage}
+            />
+          </button>
+
+          <button
+            onClick={() => {
+              playClickSound();
+              setIsContactOpen(true);
+            }}
+            className={styles.iconButton}
+          >
+            <img
+              src={theme === 'light' ? contactLight : contactDark}
+              alt="Contact Icon"
+              className={styles.buttonImage}
+            />
+          </button>
         </div>
+
+        {/* Modals */}
+        <WindowModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} title="About">
+          <About />
+        </WindowModal>
+
+        <WindowModal isOpen={isWorkOpen} onClose={() => setIsProjectsOpen(false)} title="Work">
+          <Work />
+        </WindowModal>
+
+        <WindowModal isOpen={isLinksOpen} onClose={() => setIsSkillsOpen(false)} title="Links">
+          <Links />
+        </WindowModal>
+
+        <WindowModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} title="Contact">
+          <Contact />
+        </WindowModal>
       </div>
-
-      
-      <WindowModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} title="About">
-        <About />
-      </WindowModal>
-
-      <WindowModal isOpen={isProjectsOpen} onClose={() => setIsProjectsOpen(false)} title="Projects">
-        <Projects />
-      </WindowModal>
-
-      <WindowModal isOpen={isSkillsOpen} onClose={() => setIsSkillsOpen(false)} title="Skills">
-        <Skills />
-      </WindowModal>
-
-      <WindowModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} title="Contact">
-        <Contact />
-      </WindowModal>
     </section>
   );
 }
